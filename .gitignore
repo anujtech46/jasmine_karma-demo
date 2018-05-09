@@ -11,3 +11,6 @@ bin-release/
 # information for Eclipse / Flash Builder.
 
 node_modules/
+
+src/test/reports/unit/coverage/
+src/coverage/

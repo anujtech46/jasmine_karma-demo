@@ -1,5 +1,7 @@
 Clone the project
-Run karma start karma.conf.js
+
+Run *karma start karma.conf.js*
 
 If we want covrage report
-Run karma covrage.js
+
+Run *karma start covrage.js*

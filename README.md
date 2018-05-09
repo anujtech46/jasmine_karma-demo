@@ -1,1 +1,5 @@
-jasmine_karma_demo
+Clone the project
+Run karma start karma.conf.js
+
+If we want covrage report
+Run karma covrage.js

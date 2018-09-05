@@ -4,11 +4,11 @@
  * author: Anuj Gupta
  */
 
-describe('Check required fields', function () {
+describe('Check field is present or not', function () {
   var data = { name: 'jasmine', version: 3.1 }
 
   it('Should contains name', function () {
-    expect(hasRequiredField(data, 'name')).toBe(true)
+    expect(hasRequiredField(data, 'name')).toBeTruthy()
   })
 
   it('Should contains version', function () {
@@ -39,15 +39,17 @@ describe('Equality check example', function () {
   })
 
   it('The Example of toBe() method', function () {
+    var a = {id: 1};
+    var b = {id: 1};
     //This will check whether they're the same object. 
-    expect(testValue.name.key).toBe(testValue.name1.key); //pass: Same object type string
+    // expect(testValue.name.key).toBe(testValue.name1.key); //pass: Same object type string
     // expect(testValue.name).toBe(testValue.name1); //fail: Both are different object
-    expect(testValue.name).not.toBe(testValue.name1); //pass
+    expect(a).toBe(b); //pass
   })
 
   it('Difference btw toEqual() and toBe() method', function () {
     // expect(testValue.name).toBe(testValue.name1); //fail
-    expect(testValue.name).toEqual(testValue.name1);
+    // expect(testValue.name).toEqual(testValue.name1);
   })
 })
 
@@ -65,12 +67,12 @@ describe('Different Methods of sequential check', function () {
 
   it('The Example of toContain() method', function () {
     expect([1, 2, 3, 4]).toContain(3);
-    expect([1, 2, 3, 4]).not.toContain(6);
+    expect([1, 2, 3, 4]).toContain(6);
     expect('jasmine karma').toContain('karma')
   });
 
   it('Example of toBeCloseTo()', function () {
-    // expect(45.54).toBeCloseTo(45.5, 2); //fail
+    expect(45.54).toBeCloseTo(45.5, 2); //fail
     expect(45.54).toBeCloseTo(45, 0); //pass
     expect(45.54).toBeCloseTo(45.5, 1); //pass
   });
@@ -99,7 +101,7 @@ describe('Different Methods of null Check', function () {
 describe('Different Methods of inequality Check', function () {
 
   it('Example of toBeGreaterThan()', function () {
-    expect(testValue.inequalityCheckValue).toBeGreaterThan(11);
+    expect(testValue.inequalityCheckValue).toBeGreaterThan(14);
   });
 
   it('Example of toBeGreaterThanOrEqual()', function () {
@@ -144,16 +146,16 @@ describe("A spec (with setup and tear-down)", function() {
     foo += 1;
   });
 
-  afterEach(function() {
-    foo = 0;
-  });
+  // afterEach(function() {
+  //   foo = 0;
+  // });
 
   it("first spec, foo should be one", function() {
     expect(foo).toEqual(1);
   });
 
   it("second spec, foo should be one", function() {
-    expect(foo).toEqual(1);
+    expect(foo).toEqual(2);
   });
 });
 

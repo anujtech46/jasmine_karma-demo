@@ -19,7 +19,7 @@ function getFileName() {
 }
 
 function hasRequiredField(data, key) {
-  return data[key] ? true : false
+  return data && data[key] ? true : false
 }
 
 function add(a, b) {

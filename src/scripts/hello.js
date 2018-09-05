@@ -4,7 +4,7 @@
  * author: Anuj Gupta
  */
 
-var testValue = {
+let testValue = {
 
   currentVal: 0,
   name: { key: "jasmine" },
